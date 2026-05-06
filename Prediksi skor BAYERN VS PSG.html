@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Prediksi Skor Bola</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .team {
+    text-align: center;
+  }
+
+  .team img {
+    width: 100px;
+    height: auto;
+  }
+
+  .footer {
+    margin-top: 40px;
+    font-style: italic;
+    color: gray;
+  }
+</style>
+</head>
+<body>
+
+<h1>Prediksi Pertandingan Liga Champions</h1>
+
+<div class="match">
+  <div class="team">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/FC_Bayern_M%C3%BCnchen_logo_%282024%29.svg/500px-FC_Bayern_M%C3%BCnchen_logo_%282024%29.svg.png">
+    <h3>Bayern Munchen</h3>
+    <input type="number" id="score1" value="0">
+  </div>
+
+  <div style="align-self: center; font-weight: bold;">VS</div>
+
+  <div class="team">
+    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/c/ca/Paris_Saint-Germain_F.CC..svg/500px-Paris_Saint-Germain_F.CC..svg.png">
+    <h3>Paris Saint Germain</h3>
+    <input type="number" id="score2" value="0">
+  </div>
+</div>
+
+<br>
+<button onclick="kirimWA()">Kirim Hasil</button>
+
+<div class="footer">
+  by Valdy Nedved
+</div>
+
+<script>
+function kirimWA() {
+  let skor1 = document.getElementById("score1").value;
+  let skor2 = document.getElementById("score2").value;
+
+  let pesan = `Prediksi Skor:\nBayern Munchen ${skor1} - ${skor2} PSG`;
+
+  // nomor tujuan (pakai kode negara 62, tanpa 0 depan)
+  let nomor = "6283198937908";
+
+  let url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
